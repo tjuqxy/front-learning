@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>tjuqxy</title>
+
+    <!-- Bootstrap -->
+    <link href="resource/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Qxy</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#home">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Bootstrap</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vue <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="panel panel-default" id="home">
+        <div class="panel-body">
+            <h2>前端学习</h2>
+
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default">Html</button>
+                <button type="button" class="btn btn-default">Css</button>
+                <button type="button" class="btn btn-default">Javascript</button>
+                <button type="button" class="btn btn-default">jQuery</button>
+                <button type="button" class="btn btn-default">Bootstrap</button>
+                <button type="button" class="btn btn-default">Vue</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default" id="vue-demo">
+        <div class="panel-body">
+            <div id="vue-demo-app1">
+                {{ message }}
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div id="vue-demo-app2">
+                <span v-bind:title="message">
+                        Hover your mouse over me for a few seconds to see my dynamically bound title!
+                </span>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div id="vue-demo-app3">
+                <p v-if="seen">
+                    Now you see me
+                </p>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div id="vue-demo-app4">
+                <ol>
+                    <li v-for="todo in todos">
+                        {{ todo["text"] }}
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div id="vue-demo-app5">
+                <p>
+                    {{ message }}
+                </p>
+                <button class="btn" v-on:click="reverseMessage">Reverse message</button>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div id="vue-demo-app6">
+                <p>
+                    {{ message }}
+                </p>
+                <input v-model="message" />
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div id="vue-demo-app7">
+                <ol>
+                    <todo-item v-for="item in graceryList" :key="item.text" v-bind:todo="item"></todo-item>
+                </ol>
+            </div>
+        </div>
+
+        <div id="vue-sudo" class="panel-body container">
+            <div class="row">
+                <div class="col-md-8" v-for="row_ind in 9">
+                    <div class="btn-group">
+                        <sudo-button v-on:update="updateValue" v-for="col_ind in 9" :key="row_ind+col_ind" :value="numbers[row_ind][col_ind]" :row="row_ind" :col="col_ind">
+                        </sudo-button>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-2">
+                    <button class="btn btn-primary" @click="calculateSudo">求解</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="resource/js/jquery-3.1.1.min.js"></script>
+    <script src="resource/js/bootstrap.min.js"></script>
+    <script src="resource/js/vue.js"></script>
+    <script src="js/vue-demo.js"></script>
+</body>
+
+</html>

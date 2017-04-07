@@ -1,0 +1,11 @@
+body {
+    padding-top: 60px;
+}
+
+.sudo-btn {
+    width: 58px;
+    height: 55px;
+    word-wrap: break-word;
+    white-space: normal;
+    padding-left: 10px;
+}
