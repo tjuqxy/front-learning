@@ -4,7 +4,7 @@ import (
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/cors"
 
-	"github.com/tjuqxy/http-server/api"
+	"github.com/tjuqxy/front-learning/api"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 		AllowMethods: []string{"POST", "GET"},
 	}))
 
-	m.Use(martini.Static("/Users/qinxingyao/qxy/page"))
+	m.Use(martini.Static("./public"))
 
 	m.Post("/api/sudo/calculate", api.SudoCalculate)
 

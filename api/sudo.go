@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/tjuqxy/http-server/sudo"
+	"github.com/tjuqxy/front-learning/sudo"
 )
 
 func SudoCalculate(req *http.Request) (content []byte) {
