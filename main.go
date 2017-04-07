@@ -19,5 +19,5 @@ func main() {
 
 	m.Post("/api/sudo/calculate", api.SudoCalculate)
 
-	m.RunOnAddr("127.0.0.1:8080")
+	m.RunOnAddr("0.0.0.0:8080")
 }

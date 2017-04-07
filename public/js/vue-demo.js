@@ -128,7 +128,7 @@ var app_vue = new Vue({
                 }
             }
             $.post(
-                "http://127.0.0.1:8080/api/sudo/calculate",
+                "/api/sudo/calculate",
                 JSON.stringify({'sudo_num': arr}),
                 function(data, status) {
                     console.log(data, status)
