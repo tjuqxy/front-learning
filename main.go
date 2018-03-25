@@ -4,7 +4,7 @@ import (
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/cors"
 
-	"github.com/tjuqxy/front-learning/api"
+	"github.com/tjuqxy/web/api"
 )
 
 func main() {
@@ -19,5 +19,5 @@ func main() {
 
 	m.Post("/api/sudo/calculate", api.SudoCalculate)
 
-	m.RunOnAddr("0.0.0.0:8080")
+	m.RunOnAddr("0.0.0.0:80")
 }
